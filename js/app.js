@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 });
 marca.addEventListener("change", (e)=>{
     datosBusqueda.marca = e.target.value;
+    filtrarAuto();
 });
 maximo.addEventListener("change", (e)=>{
     datosBusqueda.maximo = e.target.value;
