@@ -64,3 +64,6 @@ function llenarSelect(){
     }
 
 }
+function filtrarAuto(){
+    
+}
