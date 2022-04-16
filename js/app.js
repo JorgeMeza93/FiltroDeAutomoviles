@@ -84,6 +84,7 @@ function filtrarAuto(){
     const resultado = autos.filter( filtrarMarca ).filter( filtrarYear ).filter( filtrarMinimo).filter( filtrarMaximo ).filter( filtrarPuertas).filter( filtrarTransmision ).filter( filtrarColor )
     console.log(resultado);
     mostrarAutos(resultado);
+    mensajeFiltrado(resultado);
 }
 function filtrarMarca(auto){
     const {marca} = datosBusqueda;
@@ -133,4 +134,17 @@ function filtrarColor(auto){
         return auto.color === color;
     }
     return auto;
+}
+function mensajeFiltrado(arregloAutos){
+    limpiarHTML();
+    if(arregloAutos.length <1){
+        console.log("Ninguna busqueda");
+        const noResultado = document.createElement("div");
+        noResultado.classList.add("alerta", "error");
+        noResultado.textContent = "Ningun resultado coincide con su búsqueda";
+        resultado.appendChild(noResultado);
+    }
+    else{
+        mostrarAutos(arregloAutos); 
+    }
 }
